@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Consultation | One More Thing — OMT Services</title>
+<meta name="description" content="Tell us what you need and pick a few details — we'll follow up to lock in your consultation with One More Thing / OMT Services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="grain"></div>
+
+<a href="#leave-a-review" class="floating-review-btn" aria-label="Leave a review">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+  <span>Leave a Review</span>
+</a>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#d6b384" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">One More Thing</span>
+        <span class="brand-sub">OMT Services</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services &amp; Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="quiz.html" class="nav-quiz">Take the Quiz</a></li>
+      <li><a href="book.html" class="btn btn-nav active">Book a Consultation</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Book Your Consultation</span>
+    <h1>Let's get your plan started.</h1>
+    <p>Pick your service, tell us a bit about your situation, and choose a date that works for you. Your spot is confirmed instantly.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="quiz-card reveal" style="max-width: 640px; margin: 0 auto;">
+
+      <div id="book-form-view">
+        <form id="book-form" class="book-form">
+
+          <div class="form-field">
+            <label>What service(s) are you interested in?</label>
+            <div class="service-options">
+              <label class="service-option">
+                <input type="checkbox" name="service" value="Guided Intake Session ($100)">
+                <span class="opt-body">
+                  <span class="opt-title"><strong>Guided Intake Session</strong><span class="opt-price">$100</span></span>
+                  <span class="opt-desc">A one-on-one session to organize your essential information into a completed intake form.</span>
+                </span>
+              </label>
+              <label class="service-option">
+                <input type="checkbox" name="service" value="Full Access Plan ($175)">
+                <span class="opt-body">
+                  <span class="opt-title"><strong>Full Access Plan</strong><span class="opt-price">$175</span></span>
+                  <span class="opt-desc">Everything in the Guided Intake, plus a professionally formatted plan with printed copies for your contacts.</span>
+                </span>
+              </label>
+              <label class="service-option">
+                <input type="checkbox" name="service" value="Texas Notary Services (add-on)">
+                <span class="opt-body">
+                  <span class="opt-title"><strong>Texas Notary Services</strong><span class="opt-price">Add-on, from $10</span></span>
+                  <span class="opt-desc">Notarize documents the same day — signing sessions and mobile visits available.</span>
+                </span>
+              </label>
+              <label class="service-option">
+                <input type="checkbox" name="service" value="Not sure yet — let's talk">
+                <span class="opt-body">
+                  <span class="opt-title"><strong>Not sure yet</strong><span class="opt-price">Let's talk</span></span>
+                  <span class="opt-desc">We'll help you figure out the right fit during your consultation.</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="bf-name">Your Name</label>
+              <input type="text" id="bf-name" name="name" required placeholder="Jane Doe">
+            </div>
+            <div class="form-field">
+              <label for="bf-email">Email</label>
+              <input type="email" id="bf-email" name="email" required placeholder="jane@email.com">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="bf-phone">Phone <span class="field-optional">(optional)</span></label>
+            <input type="tel" id="bf-phone" name="phone" placeholder="(214) 555-0123">
+          </div>
+
+          <div class="form-field">
+            <label for="bf-age">Your Age <span class="age-value" id="bf-age-value">45</span></label>
+            <div class="slider-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+              <input type="range" id="bf-age" name="age" min="18" max="95" value="45">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </div>
+            <div class="slider-scale"><span>18</span><span class="field-hint">Drag to set your age</span><span>95+</span></div>
+          </div>
+
+          <div class="form-field">
+            <label for="bf-message">What are you hoping to get help with? <span class="field-optional">(optional)</span></label>
+            <textarea id="bf-message" name="message" rows="3" placeholder='e.g. "I want my daughter to know where to find my medical info and who to call."'></textarea>
+          </div>
+
+          <div class="form-field">
+            <label>Pick a Day</label>
+            <div class="calendar">
+              <div class="calendar-header">
+                <button type="button" class="calendar-nav" id="cal-prev" aria-label="Previous month">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <span class="calendar-month-label" id="cal-month-label"></span>
+                <button type="button" class="calendar-nav" id="cal-next" aria-label="Next month">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+              </div>
+              <div class="calendar-weekdays">
+                <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+              </div>
+              <div class="calendar-days" id="calendar-days"></div>
+            </div>
+          </div>
+
+          <div class="form-field" id="time-field" hidden>
+            <label>Available Times <span class="field-optional" id="time-date-label"></span></label>
+            <div class="time-bubbles" id="time-bubbles"></div>
+          </div>
+
+          <p class="form-error" id="book-error" hidden>Please select a date and time before booking.</p>
+          <button type="submit" class="btn btn-primary form-submit" id="book-submit-btn">Book Consultation</button>
+          <p class="form-note">Instantly confirmed against Angie's real-time availability.</p>
+        </form>
+      </div>
+
+      <div id="book-success-view" hidden>
+        <div class="book-success">
+          <div class="success-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <h2>Your Consultation Has Been Booked!</h2>
+          <p id="book-success-message">A calendar invite and confirmation email are on their way. We'll also send a reminder a day or two before your appointment — see you soon!</p>
+          <button type="button" class="btn btn-outline-navy" id="book-another-btn">Book Another Consultation</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="review-band" id="leave-a-review">
+      <div id="review-form-view">
+        <h3>Loved your experience with OMT?</h3>
+        <p>Leave a quick rating — it takes 10 seconds.</p>
+        <div class="star-picker" id="star-picker">
+          <button type="button" class="star-btn" data-value="1" aria-label="1 star">&#9733;</button>
+          <button type="button" class="star-btn" data-value="2" aria-label="2 stars">&#9733;</button>
+          <button type="button" class="star-btn" data-value="3" aria-label="3 stars">&#9733;</button>
+          <button type="button" class="star-btn" data-value="4" aria-label="4 stars">&#9733;</button>
+          <button type="button" class="star-btn" data-value="5" aria-label="5 stars">&#9733;</button>
+        </div>
+        <button type="button" class="btn btn-primary" id="review-submit-btn" disabled>Submit Review</button>
+      </div>
+      <div id="review-thanks-view" hidden>
+        <div class="review-thanks-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h3 id="review-thanks-heading">Thank you!</h3>
+        <p id="review-thanks-message">Your feedback means a lot to us.</p>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand-name">One More Thing</span>
+        <p>A modern, hands-on consulting service helping you organize essential information and create clear access plans for the people you trust.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services &amp; Pricing</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="quiz.html">Take the Quiz</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get In Touch</h5>
+        <ul>
+          <li><a href="mailto:AngieMay@omtservices.com">AngieMay@omtservices.com</a></li>
+        </ul>
+        <div class="footer-areas">
+          <span class="area-tag-sm">Plano</span>
+          <span class="area-tag-sm">Frisco</span>
+          <span class="area-tag-sm">Allen</span>
+          <span class="area-tag-sm">Richardson</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 One More Thing / OMT Services. All rights reserved.</span>
+      <span>Cash &amp; check accepted &middot; Card payments coming soon</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/book.js"></script>
+<script src="js/review.js"></script>
+</body>
+</html>
