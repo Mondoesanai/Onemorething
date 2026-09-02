@@ -120,50 +120,23 @@
             <textarea id="bf-message" name="message" rows="3" placeholder='e.g. "I want my daughter to know where to find my medical info and who to call."'></textarea>
           </div>
 
-          <div class="form-field">
-            <label>Pick a Day</label>
-            <div class="calendar">
-              <div class="calendar-header">
-                <button type="button" class="calendar-nav" id="cal-prev" aria-label="Previous month">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-                </button>
-                <span class="calendar-month-label" id="cal-month-label"></span>
-                <button type="button" class="calendar-nav" id="cal-next" aria-label="Next month">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
-              </div>
-              <div class="calendar-weekdays">
-                <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
-              </div>
-              <div class="calendar-days" id="calendar-days"></div>
-            </div>
-          </div>
-
-          <div class="form-field" id="time-field" hidden>
-            <label>Available Times <span class="field-optional" id="time-date-label"></span></label>
-            <div class="time-bubbles" id="time-bubbles"></div>
-          </div>
-
-          <p class="form-error" id="book-error" hidden>Please select a date and time before booking.</p>
-          <button type="submit" class="btn btn-primary form-submit" id="book-submit-btn">Book Consultation</button>
-          <p class="form-note">Instantly confirmed against Angie's real-time availability.</p>
         </form>
       </div>
 
-      <div id="book-success-view" hidden>
-        <div class="book-success">
-          <div class="success-check">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          </div>
-          <h2>Your Consultation Has Been Booked!</h2>
-          <p id="book-success-message">A calendar invite and confirmation email are on their way. We'll also send a reminder a day or two before your appointment — see you soon!</p>
-          <button type="button" class="btn btn-outline-navy" id="book-another-btn">Book Another Consultation</button>
-        </div>
-      </div>
+    </div>
 
+    <div class="quiz-card reveal calendly-card" style="max-width: 640px; margin: 32px auto 0;">
+      <div class="calendly-intro">
+        <span class="eyebrow" style="justify-content:center">Pick Your Time</span>
+        <h3>Grab a slot on Angie's calendar</h3>
+        <p>Tell us about your situation above, then choose a time below — no need to submit anything, just pick a slot.</p>
+      </div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/angiemay-omtservices/30min" style="min-width:280px;height:700px;"></div>
     </div>
   </div>
 </section>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 <footer class="site-footer">
   <div class="container">
