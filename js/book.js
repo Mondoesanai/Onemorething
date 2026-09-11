@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
       quality: 'Guided Intake Session ($100)',
       advanced: 'Full Access Plan ($175)',
       notary: 'Texas Notary Services (add-on)',
+      'emergency-packet': 'Emergency Contact Packet',
+      'pet-packet': 'Pet Emergency Packet',
     };
     const targetValue = map[serviceParam] || serviceParam;
     form.querySelectorAll('input[name="service"]').forEach((cb) => {
