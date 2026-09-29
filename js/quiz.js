@@ -140,6 +140,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function showResults() {
     questionView.hidden = true;
     resultsView.hidden = false;
+    // count a real quiz completion (was never tracked before) — same beacon the
+    // tracker snippet (t.js) sends for a data-track click, fired manually here
+    // since finishing the quiz isn't a single click event
+    try {
+      if (window.__iw_track) window.__iw_track('quiz-complete');
+    } catch {}
 
     const total = answers.reduce((sum, a) => sum + (a ? a.points : 0), 0);
     scoreNum.textContent = total;
