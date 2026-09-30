@@ -3,22 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultsView = document.getElementById('quiz-results-view');
   if (!questionView || !resultsView) return;
 
-  const QUESTIONS = [
-    { type: 'choice', text: 'Would your emergency contact know where to find your medical information?', gap: 'Medical information access' },
-    { type: 'choice', text: 'Do they have a current list of your medications and allergies?', gap: 'Medication & allergy list' },
-    { type: 'choice', text: "Would they know exactly who to call — doctor, insurance, family — without searching?", gap: 'Key contacts list' },
-    { type: 'choice', text: 'Do they have access to your home, car, or safe if needed?', gap: 'Physical access planning' },
-    { type: 'choice', text: 'Do they know your legal and financial contacts — attorney, accountant, or bank?', gap: 'Legal & financial contacts' },
-    { type: 'choice', text: 'Would they know how to get into your phone or key accounts if needed?', gap: 'Digital & account access' },
-    { type: 'choice', text: "If more than one person could step in, is it clear who's actually in charge?", gap: 'Clear decision-making authority' },
-    {
-      type: 'text',
-      text: 'In your own words — where, specifically, would they find this information today?',
-      placeholder: 'e.g. "a folder in my desk drawer" — or honestly, "nowhere yet"',
-      gap: 'Written documentation',
-    },
-    { type: 'choice', text: "Would they know your wishes if you couldn't speak for yourself?", gap: 'Documented wishes & preferences' },
-  ];
+  // Each quiz page sets window.QUIZ_CONFIG (in a small <script> before this file)
+  // with its own questions and result tiers — this file is the shared engine for
+  // all three quizzes (Home / Emergency Contact / Pet), so the flow, scoring and
+  // progress UI stay identical everywhere and only ever need fixing in one place.
+  const CONFIG = window.QUIZ_CONFIG || { questions: [], tiers: {} };
+  const QUESTIONS = CONFIG.questions;
 
   const OPTIONS = [
     { label: 'Yes, definitely', points: 2 },
@@ -144,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // tracker snippet (t.js) sends for a data-track click, fired manually here
     // since finishing the quiz isn't a single click event
     try {
-      if (window.__iw_track) window.__iw_track('quiz-complete');
+      if (window.__iw_track) window.__iw_track(CONFIG.trackEvent || 'quiz-complete');
     } catch {}
 
     const total = answers.reduce((sum, a) => sum + (a ? a.points : 0), 0);
@@ -154,29 +144,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const gaps = QUESTIONS.filter((q, i) => !answers[i] || answers[i].points < 2).map((q) => q.gap);
 
+    const tiers = CONFIG.tiers || {};
     let tier;
-    if (total >= Math.round(MAX_SCORE * 0.83)) {
-      tier = {
-        badge: 'Impressively Prepared',
-        heading: "Your person is more ready than most.",
-        desc: "You've clearly thought this through — that alone puts you ahead of most families. What paperwork can't do on its own is make it official. A notarized, printed Access Plan turns your preparation into something your family can act on immediately, with no guessing or interpretation required.",
-        ctaLabel: 'Make It Official',
-      };
-    } else if (total >= Math.round(MAX_SCORE * 0.42)) {
-      tier = {
-        badge: 'Partially Prepared',
-        heading: 'You have pieces in place — but real gaps remain.',
-        desc: "Most families land here. A guided intake session closes the gaps above in under an hour, so your trusted contact isn't left guessing when it matters most.",
-        ctaLabel: 'Close the Gaps',
-      };
-    } else {
-      tier = {
-        badge: 'Not Prepared Yet',
-        heading: "Right now, your person would be left guessing.",
-        desc: "That's more common than you'd think — and it's exactly what One More Thing was built to fix. One guided session changes this completely.",
-        ctaLabel: 'Start My Plan',
-      };
-    }
+    if (total >= Math.round(MAX_SCORE * 0.83)) tier = tiers.high;
+    else if (total >= Math.round(MAX_SCORE * 0.42)) tier = tiers.mid;
+    else tier = tiers.low;
 
     tierBadge.textContent = tier.badge;
     tierHeading.textContent = tier.heading;
@@ -196,7 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     quizCta.textContent = tier.ctaLabel;
     const context = encodeURIComponent(`Quiz score ${total} of ${MAX_SCORE} (${tier.badge})`);
-    quizCta.href = `book.html?context=${context}`;
+    const svc = CONFIG.ctaService ? `service=${encodeURIComponent(CONFIG.ctaService)}&` : '';
+    quizCta.href = `book.html?${svc}context=${context}`;
   }
 
   backBtn.addEventListener('click', goBack);
