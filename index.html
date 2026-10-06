@@ -10,7 +10,9 @@
 <meta property="og:description" content="Guided emergency access planning, personal information organizing, and mobile notary services in Plano, Frisco, Allen &amp; Richardson, TX.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="css/style.css">
 <script defer src="https://agency-dashboard-omega-red.vercel.app/t.js"></script>
 </head>
@@ -64,7 +66,7 @@
       <div class="hero-orbit"></div>
       <div class="hero-orbit small"></div>
       <div class="hero-photo-frame">
-        <img src="images/confusion.jpg" alt="A person overwhelmed, surrounded by paperwork, not knowing where to start" loading="eager">
+        <img src="images/confusion.jpg" alt="A person overwhelmed, surrounded by paperwork, not knowing where to start" loading="eager" fetchpriority="high" decoding="async">
         <div class="hero-photo-caption">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
           <span>Where Most People Start</span>
