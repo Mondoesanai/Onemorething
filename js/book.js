@@ -16,12 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (serviceParam) {
     const map = {
-      quality: 'Guided Intake Session ($100)',
-      advanced: 'Full Access Plan ($175)',
+      clarity: 'The One More Thing Clarity Package ($349)',
       notary: 'Texas Notary Services (add-on)',
-      'group-sessions': 'Group Emergency Preparedness Sessions',
-      'in-home-family-plan': 'In-Home Family Emergency Plan (group workshop)',
-      'trusted-contact-pet': 'Trusted Contact & Pet Preparedness Packet ($65)',
+      'pet-packet': 'Pet Preparedness Packet ($65)',
     };
     const targetValue = map[serviceParam] || serviceParam;
     form.querySelectorAll('input[name="service"]').forEach((cb) => {

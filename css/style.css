@@ -800,6 +800,20 @@ section { padding: 100px 0; }
   max-width: 800px;
   margin: 0 auto;
 }
+.pricing-grid.cols-1 {
+  grid-template-columns: 1fr;
+  max-width: 460px;
+  margin: 0 auto;
+}
+.paw-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  background: linear-gradient(155deg, var(--navy-700), var(--navy-900));
+  box-shadow: var(--shadow-sm);
+}
+.paw-icon svg { width: 26px; height: 26px; color: var(--tan-400); }
 .price-card {
   background: var(--white);
   border-radius: var(--radius-lg);
@@ -855,6 +869,54 @@ section { padding: 100px 0; }
 .price-list li:first-child { border-top: none; }
 .price-list svg { width: 16px; height: 16px; color: var(--tan-600); flex-shrink: 0; margin-top: 3px; }
 .price-card.featured .price-list svg { color: var(--tan-400); }
+
+/* ==========================================================================
+   Flagship service card
+   ========================================================================== */
+
+.flagship-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(23, 50, 77, 0.06);
+}
+.flagship-main { max-width: 640px; margin-bottom: 40px; }
+.flagship-main .price-desc { font-weight: 600; color: var(--navy-800); margin-bottom: 4px; }
+.flagship-lede { color: var(--ink-500); font-size: 16px; line-height: 1.7; margin: 10px 0 22px; }
+.flagship-main .price-amount { margin-bottom: 26px; }
+.flagship-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(23, 50, 77, 0.08);
+}
+.flagship-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tan-700);
+  margin-bottom: 18px;
+  font-family: var(--font-body);
+}
+.flagship-col .price-list { margin: 0; }
+.flagship-steps { display: flex; flex-direction: column; gap: 18px; }
+.flagship-steps li { display: flex; align-items: center; gap: 14px; }
+.flagship-step-num {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(155deg, var(--tan-400), var(--tan-600));
+  color: var(--navy-950);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-tan);
+}
+.flagship-steps strong { font-size: 14.5px; color: var(--navy-900); font-weight: 600; }
 
 /* ==========================================================================
    Notary pricing table
@@ -1517,6 +1579,8 @@ section { padding: 100px 0; }
   .step:not(:first-child) { border-left: none; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 36px; }
   .pricing-grid,
   .pricing-grid.cols-2 { grid-template-columns: 1fr; }
+  .flagship-card { padding: 32px 26px; }
+  .flagship-columns { grid-template-columns: 1fr; gap: 28px; }
   .about-split { grid-template-columns: 1fr; }
   .about-visual { max-width: 320px; margin: 0 auto; }
   .founder-statement { padding: 38px 28px; }

@@ -1,6 +1,6 @@
 window.QUIZ_CONFIG = {
   trackEvent: 'quiz-complete-home',
-  ctaService: 'in-home-family-plan',
+  ctaService: 'clarity',
   questions: [
     { text: 'Would your household know exactly where to go during a tornado or shelter-in-place emergency?', gap: 'Tornado & shelter-in-place readiness' },
     { text: 'Do you have a clear meeting location outside the home if you get separated?', gap: 'Meeting locations' },
@@ -22,13 +22,13 @@ window.QUIZ_CONFIG = {
     mid: {
       badge: 'Partially Prepared',
       heading: 'You have pieces in place — but real gaps remain.',
-      desc: 'Most households land here. An In-Home Family Emergency Plan closes the gaps above in a guided group workshop, so every person in the home — not just you — knows what to do.',
+      desc: 'Most households land here. The Clarity Package closes the gaps above in a guided, 3-session coaching experience, so every person in the home — not just you — knows what to do.',
       ctaLabel: 'Close the Gaps',
     },
     low: {
       badge: 'Not Prepared Yet',
       heading: 'Right now, your household would be figuring it out in the moment.',
-      desc: "That's more common than you'd think — and it's exactly what One More Thing's group workshops were built to fix. One session, done together as a family, changes this completely.",
+      desc: "That's more common than you'd think — and it's exactly what the Clarity Package was built to fix. A guided, 3-session coaching experience changes this completely.",
       ctaLabel: 'Start My Plan',
     },
   },
