@@ -21,6 +21,9 @@ const MIME = {
   '.woff2':'font/woff2',
   '.ttf':  'font/ttf',
   '.json': 'application/json',
+  '.pdf':  'application/pdf',
+  '.xml':  'application/xml',
+  '.txt':  'text/plain; charset=utf-8',
 };
 
 const server = http.createServer((req, res) => {
